@@ -4,34 +4,26 @@ using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-	public Collider target;
+	private Collider target;
 		// The object we're looking at
-	new public Camera camera;
+	private Camera camera = Camera.mainCamera;
 		// The camera to control
-	public LayerMask obstacleLayers = -1, groundLayers = -1;
+	public LayerMask obstacleLayers = 0, groundLayers = -1;
 		// Which layers should count as obstructing the view? And which are designated ground?
 		// NOTICE: Make sure that the target collider is not in any of these layers!
 	public float groundedCheckOffset = 0.7f;
 		// Tweak so check starts from just within target footing
-	public float rotationUpdateSpeed = 60.0f,
-		lookUpSpeed = 20.0f,
+	public float rotationUpdateSpeed = 100.0f,
+		lookUpSpeed = 50.0f,
 		distanceUpdateSpeed = 10.0f,
 		followUpdateSpeed = 10.0f;
 		// Tweak these to adjust camera responsiveness
 	public float maxForwardAngle = 80.0f;
 		// Tweak to adjust camera clamping angle - specifies the maximum angle between target and clamped camera forward
 	public float minDistance = 0.1f,
-		maxDistance = 10.0f,
-		zoomSpeed = 1.0f;
+		maxDistance = 40.0f,
+		zoomSpeed = 200.0f;
 		// Tweak to adjust scrollwheel zoom
-    //The offset of the camera to centrate the player in the X axis
-    public float offsetX = -5;
-    //The offset of the camera to centrate the player in the Z axis
-    public float offsetZ = 0;
-    //The maximum distance permited to the camera to be far from the player, its used to make a smooth movement
-    public float maximumDistance = 2;
-    //The velocity of your player, used to determine que speed of the camera
-    public float playerVelocity = 10;
 
     private float movementX = 0f;
     private float movementZ = 0f;
@@ -68,7 +60,7 @@ public class ThirdPersonCamera : MonoBehaviour
 	{
 		if (target == null)
 		{
-			target = GetComponent<Collider> ();
+			target = GameObject.FindWithTag("Player").GetComponent<Collider> ();
 		}
 		
 		if (camera == null)

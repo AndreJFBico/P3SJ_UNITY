@@ -12,7 +12,11 @@ public class Pickup : MonoBehaviour {
 	
     void OnTriggerEnter(Collider other)
     {
-
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Stats>().pickupKey();
+            Destroy(gameObject);
+        }
     }
 
 	// Update is called once per frame

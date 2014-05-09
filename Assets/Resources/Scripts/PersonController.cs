@@ -17,7 +17,7 @@ public AnimationClip jumpPoseAnimation;
 
 public float walkMaxAnimationSpeed = 0.75f;
 public float trotMaxAnimationSpeed = 1.0f;
-public float runMaxAnimationSpeed = 1.0f;
+public float runMaxAnimationSpeed = 1.5f;
 public float jumpAnimationSpeed = 1.15f;
 public float landAnimationSpeed = 1.0f;
 
@@ -34,22 +34,22 @@ enum CharacterState {
 private CharacterState _characterState;
 
 // The speed when walking
-public float walkSpeed= 2.0f;
+public float walkSpeed= 5.0f;
 // after trotAfterSeconds of walking we trot with trotSpeed
 public float trotSpeed= 4.0f;
 // when pressing "Fire3" button (cmd) we start running
-public float runSpeed= 6.0f;
+public float runSpeed= 12.0f;
 
 public float inAirControlAcceleration= 3.0f;
 
 // How high do we jump when pressing jump and letting go immediately
-public float jumpHeight= 0.5f;
+public float jumpHeight= 1.5f;
 
 // The gravity for the character
 public float gravity= 20.0f;
 // The gravity in controlled descent mode
 public float speedSmoothing= 10.0f;
-public float rotateSpeed= 500.0f;
+public float rotateSpeed= 300.0f;
 public float trotAfterSeconds= 3.0f;
 
 public bool canJump= true;
