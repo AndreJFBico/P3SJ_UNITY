@@ -14,9 +14,17 @@ public class ammo : MonoBehaviour {
 	void Update () {
 	
 	}
-    void OnColliderEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
-        Destroy(this);
+        if(col.gameObject.tag == "Enemy")
+        {
+            Turret scrpt = col.gameObject.GetComponent<Turret>();
+            if(scrpt != null)
+                scrpt.damage(5);
+        }
+        GameObject exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position, Quaternion.identity);
+        Destroy(exp, 0.2f); 
+        Destroy(this.gameObject);
     }
 	
 	public float getDamage() {

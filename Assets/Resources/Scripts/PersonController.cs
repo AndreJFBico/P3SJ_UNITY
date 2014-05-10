@@ -163,7 +163,7 @@ void  UpdateSmoothedMovementDirection ()
 	Vector3 targetDirection= h * right + v * forward;
 	
 	// Grounded controls
-	if (grounded && _secondaryState != CharacterState.Firing)
+	if (grounded /*&& _secondaryState != CharacterState.Firing*/)
 	{
 		// Lock camera for short period when transitioning moving & standing still
 		lockCameraTimer += Time.deltaTime;
@@ -173,7 +173,7 @@ void  UpdateSmoothedMovementDirection ()
 		// We store speed and direction seperately,
 		// so that when the character stands still we still have a valid forward direction
 		// moveDirection is always normalized, and we only update it if there is user input.
-        if (targetDirection != Vector3.zero && _secondaryState != CharacterState.Firing)
+        if (targetDirection != Vector3.zero && _secondaryState != CharacterState.Firing && !IsMovingBackwards())
 		{
 			// If we are really slow, just snap to the target direction
 			/*if (moveSpeed < walkSpeed * 0.9f && grounded)
@@ -331,14 +331,25 @@ void Update ()
 	
 	// Calculate actual motion
 
-        Vector3 movement = moveDirection * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
-        movement *= Time.deltaTime;
 
-        // Move the controller
 
+    // Move the controller
+
+    Vector3 movement, backMovement;
+    movement = moveDirection * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
+    movement *= Time.deltaTime;
+    if (IsMovingBackwards())
+    {
+        backMovement = -transform.forward * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
+        backMovement *= Time.deltaTime;
+        collisionFlags = controller.Move(backMovement);
+        camera.setMovement(backMovement.x, backMovement.y, backMovement.z);
+    }
+    else
+    {
         collisionFlags = controller.Move(movement);
-
         camera.setMovement(movement.x, movement.y, movement.z);
+    } 
 
 
 

@@ -7,7 +7,6 @@ public class WeaponScript : MonoBehaviour {
     public GameObject firepoint;
     public GameObject explosion;
     private GameObject intAmmo;
-    private GameObject exp;
     private PersonController controller;
     private bool firing = false;
 
@@ -16,7 +15,7 @@ public class WeaponScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-        controller = transform.GetComponent<PersonController>();
+        controller = transform.GetComponent<PersonController>();    
 	}
 	
 	// Update is called once per frame
@@ -35,8 +34,8 @@ public class WeaponScript : MonoBehaviour {
         intAmmo = Instantiate(Resources.Load("Prefab/ammo"), firepoint.transform.position , Quaternion.identity) as GameObject;
         //intAmmo.rigidbody.velocity = transform.TransformDirection(Vector3.forward * speed);
         intAmmo.rigidbody.AddForce((targetPos - firepoint.transform.position) * speed);
-        //exp = (GameObject)Instantiate(Resources.Load("Prefab/Explosion"), firepoint.transform.position, firepoint.transform.rotation);
-        //exp.transform.parent = firepoint.transform;
+        GameObject exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), firepoint.transform.position + transform.forward * 0.5f, firepoint.transform.rotation);
+        exp.transform.parent = firepoint.transform;
         Destroy(exp, 0.2f); 
         StartCoroutine(WaitAndDo(0.2f, resetAnim));
         StartCoroutine(WaitAndDo(1.5f, explodeAmmo, intAmmo));

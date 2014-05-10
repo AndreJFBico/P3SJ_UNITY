@@ -6,6 +6,8 @@ public class Turret : MonoBehaviour {
     private GameObject prefab;
     private bool firing = false;
     private Transform inicial;
+    private float health = 50;
+
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +20,7 @@ public class Turret : MonoBehaviour {
         if (other.tag == "Player")
         {
             firing = true;
-            transform.LookAt(other.transform);
+            transform.LookAt(new Vector3(other.transform.position.x, other.transform.position.y + 2f, other.transform.position.z));
             StartCoroutine("fireBullet");
         }
     }
@@ -48,6 +50,15 @@ public class Turret : MonoBehaviour {
             firing = false;
             transform.rotation = inicial.rotation;
         }
+    }
+
+    public void damage(float damage)
+    {
+        if (health - damage < 0)
+        {
+            Destroy(this.gameObject);
+        }
+        else health -= damage;
     }
 
 	// Update is called once per frame
