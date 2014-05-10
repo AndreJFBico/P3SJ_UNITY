@@ -1,6 +1,3 @@
-// Converted from UnityScript to C# at http://www.M2H.nl/files/js_to_c.php - by Mike Hergaarden
-// Do test the code! You usually need to change a few small bits.
-
 using UnityEngine;
 using System.Collections;
 
@@ -14,12 +11,14 @@ public AnimationClip idleAnimation;
 public AnimationClip walkAnimation;
 public AnimationClip runAnimation;
 public AnimationClip jumpPoseAnimation;
+public AnimationClip fireAnimation;
 
 public float walkMaxAnimationSpeed = 0.75f;
 public float trotMaxAnimationSpeed = 1.0f;
 public float runMaxAnimationSpeed = 1.5f;
 public float jumpAnimationSpeed = 1.15f;
 public float landAnimationSpeed = 1.0f;
+public float fireAnimationSpeed = 0.75f;
 
 private Animation _animation;
 
@@ -29,10 +28,11 @@ enum CharacterState {
 	Trotting = 2,
 	Running = 3,
 	Jumping = 4,
+    Firing = 5,
 }
 
 private CharacterState _characterState;
-
+private CharacterState _secondaryState;
 // The speed when walking
 public float walkSpeed= 5.0f;
 // after trotAfterSeconds of walking we trot with trotSpeed
@@ -97,23 +97,22 @@ private Vector3 inAirVelocity= Vector3.zero;
 
 private float lastGroundedTime= 0.0f;
 
+private CharacterController controller;
 
 private bool isControllable= true;
 
 void  Awake ()
 {
 	moveDirection = transform.TransformDirection(Vector3.forward);
-	
+	controller = GetComponent<CharacterController>();
 	_animation = GetComponent<Animation>();
 	if(!_animation)
 		Debug.Log("The character you would like to control doesn't have animations. Moving her might look weird.");
-	
-	/*
-public AnimationClip idleAnimation;
-public AnimationClip walkAnimation;
-public AnimationClip runAnimation;
-public AnimationClip jumpPoseAnimation;	
-	*/
+    if (!fireAnimation)
+    {
+        _animation = null;
+        Debug.Log("No fire animation found. Turning off animations.");
+    }
 	if(!idleAnimation) {
 		_animation = null;
 		Debug.Log("No idle animation found. Turning off animations.");
@@ -130,7 +129,7 @@ public AnimationClip jumpPoseAnimation;
 		_animation = null;
 		Debug.Log("No jump animation found and the character has canJump enabled. Turning off animations.");
 	}
-    camera = Camera.mainCamera.GetComponent<ThirdPersonCamera>();
+    camera = Camera.main.GetComponent<ThirdPersonCamera>();
 }
 
 
@@ -164,7 +163,7 @@ void  UpdateSmoothedMovementDirection ()
 	Vector3 targetDirection= h * right + v * forward;
 	
 	// Grounded controls
-	if (grounded)
+	if (grounded && _secondaryState != CharacterState.Firing)
 	{
 		// Lock camera for short period when transitioning moving & standing still
 		lockCameraTimer += Time.deltaTime;
@@ -174,7 +173,7 @@ void  UpdateSmoothedMovementDirection ()
 		// We store speed and direction seperately,
 		// so that when the character stands still we still have a valid forward direction
 		// moveDirection is always normalized, and we only update it if there is user input.
-		if (targetDirection != Vector3.zero)
+        if (targetDirection != Vector3.zero && _secondaryState != CharacterState.Firing)
 		{
 			// If we are really slow, just snap to the target direction
 			/*if (moveSpeed < walkSpeed * 0.9f && grounded)
@@ -197,7 +196,7 @@ void  UpdateSmoothedMovementDirection ()
 		//* We want to support analog input but make sure you cant walk faster diagonally than just forward or sideways
 		float targetSpeed= Mathf.Min(targetDirection.magnitude, 1.0f);
 	
-		_characterState = CharacterState.Idle;
+		//_characterState = CharacterState.Idle;
 		
 		// Pick speed modifier
 		if (Input.GetKey (KeyCode.LeftShift) || Input.GetKey (KeyCode.RightShift))
@@ -292,9 +291,23 @@ public void DidJump ()
 	_characterState = CharacterState.Jumping;
 }
 
+public void runFireAnim(Vector3 target)
+{
+    Vector3 posIgnoringY = new Vector3(target.x, transform.position.y, target.z);
+    transform.LookAt(posIgnoringY);
+    _secondaryState = CharacterState.Firing;
+    /*if(!IsJumping())
+        moveDirection = transform.forward; */
+}
+
+public void stopFireAnim()
+{
+    _animation[fireAnimation.name].speed = 9999f;
+    _secondaryState = CharacterState.Idle;
+}
+
 void Update ()
 {
-	
 	if (!isControllable)
 	{
 		// kill all inputs if not controllable.
@@ -317,14 +330,17 @@ void Update ()
 	ApplyJumping ();
 	
 	// Calculate actual motion
-	Vector3 movement= moveDirection * moveSpeed + new Vector3 (0, verticalSpeed, 0) + inAirVelocity;
-	movement *= Time.deltaTime;
-	
-	// Move the controller
-	CharacterController controller = GetComponent<CharacterController>();
-	collisionFlags = controller.Move(movement);
-	
-    camera.setMovement(movement.x, movement.y, movement.z);
+
+        Vector3 movement = moveDirection * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
+        movement *= Time.deltaTime;
+
+        // Move the controller
+
+        collisionFlags = controller.Move(movement);
+
+        camera.setMovement(movement.x, movement.y, movement.z);
+
+
 
 	// ANIMATION sector
 	if(_animation) {
@@ -339,33 +355,55 @@ void Update ()
 				_animation[jumpPoseAnimation.name].wrapMode = WrapMode.ClampForever;
 				_animation.CrossFade(jumpPoseAnimation.name);				
 			}
-		} 
+            if (_secondaryState == CharacterState.Firing)
+            {
+                _animation[fireAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, fireAnimationSpeed);
+                _animation.CrossFade(fireAnimation.name);
+            }
+		}
 		else 
 		{
 			if(controller.velocity.sqrMagnitude < 0.1f) {
-				_animation.CrossFade(idleAnimation.name);
+                if (_secondaryState == CharacterState.Firing)
+                {
+                    _animation[fireAnimation.name].speed = fireAnimationSpeed;
+                    _animation.CrossFade(fireAnimation.name);
+                }
+                else _animation.CrossFade(idleAnimation.name);
 			}
 			else 
 			{
-				if(_characterState == CharacterState.Running) {
-					_animation[runAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, runMaxAnimationSpeed);
-					_animation.CrossFade(runAnimation.name);	
-				}
-				else if(_characterState == CharacterState.Trotting) {
-					_animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, trotMaxAnimationSpeed);
-					_animation.CrossFade(walkAnimation.name);	
-				}
-				else if(_characterState == CharacterState.Walking) {
-					_animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, walkMaxAnimationSpeed);
-					_animation.CrossFade(walkAnimation.name);	
-				}
-				
+                if ( _secondaryState == CharacterState.Firing)
+                {
+                    _animation[fireAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, fireAnimationSpeed);
+                    _animation.CrossFade(fireAnimation.name);
+                }
+                else
+                {
+                    if (_characterState == CharacterState.Running )
+                    {
+					    _animation[runAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, runMaxAnimationSpeed);
+					    _animation.CrossFade(runAnimation.name);	
+				    }
+                    else if (_characterState == CharacterState.Trotting )
+                    {
+					    _animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, trotMaxAnimationSpeed);
+					    _animation.CrossFade(walkAnimation.name);	
+				    }
+                    else if (_characterState == CharacterState.Walking )
+                    {
+					    _animation[walkAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, walkMaxAnimationSpeed);
+					    _animation.CrossFade(walkAnimation.name);	
+				    }
+                }
 			}
 		}
+
 	}
 	// ANIMATION sector
 	
 	// Set rotation to the move direction
+    if( _secondaryState != CharacterState.Firing)
 	if (IsGrounded())
 	{
 		

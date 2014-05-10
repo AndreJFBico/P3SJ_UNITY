@@ -17,9 +17,10 @@ public class Hole : MonoBehaviour {
         end2 = FindChild("End2");
 	}
 	
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
-        transform.Translate(0, -0.2f, 0);
+        if (other.tag == "Player" && !open)
+            transform.Translate(0, -0.2f, 0);
     }
 
     void OnTriggerStay()
@@ -36,10 +37,10 @@ public class Hole : MonoBehaviour {
 
     void OnTriggerExit()
     {
-        open = false;
-        part1.localPosition = new Vector3(1.25f, part1.localPosition.y, part1.localPosition.z);
-        part2.localPosition = new Vector3(-1.25f, part2.localPosition.y, part2.localPosition.z);
-        transform.Translate(0, 0.2f, 0);
+        //open = false;
+        //part1.localPosition = new Vector3(1.25f, part1.localPosition.y, part1.localPosition.z);
+       // part2.localPosition = new Vector3(-1.25f, part2.localPosition.y, part2.localPosition.z);
+        //transform.Translate(0, 0.2f, 0);
     }
 
 

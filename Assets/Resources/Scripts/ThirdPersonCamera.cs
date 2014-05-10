@@ -6,7 +6,7 @@ public class ThirdPersonCamera : MonoBehaviour
 {
 	private Collider target;
 		// The object we're looking at
-	private Camera camera = Camera.mainCamera;
+	private Camera camera;
 		// The camera to control
 	public LayerMask obstacleLayers = 0, groundLayers = -1;
 		// Which layers should count as obstructing the view? And which are designated ground?
@@ -58,6 +58,7 @@ public class ThirdPersonCamera : MonoBehaviour
 	void Setup ()
 	// If target and/or camera is not set, try using fallbacks
 	{
+        camera = Camera.main;
 		if (target == null)
 		{
 			target = GameObject.FindWithTag("Player").GetComponent<Collider> ();

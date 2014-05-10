@@ -311,6 +311,10 @@ ModelImporter:
     7400006: Punch
     7400008: Run
     7400010: Walk
+    7400012: Jump
+    7400014: GunRunWalk
+    7400016: GunAttack
+    7400018: GunFire
     9500000: //RootNode
     11100000: //RootNode
     13700000: roboto
@@ -332,8 +336,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Default Take
       takeName: Default Take
-      firstFrame: 20
-      lastFrame: 21
+      firstFrame: 19
+      lastFrame: 39
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
@@ -1815,6 +1819,894 @@ ModelImporter:
       firstFrame: 20
       lastFrame: 40
       wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: roboto
+        weight: 1
+      - path: roboto_armature
+        weight: 1
+      - path: roboto_armature/cast_L
+        weight: 1
+      - path: roboto_armature/cast_R
+        weight: 1
+      - path: roboto_armature/Cpie_L
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001/ik_R
+        weight: 1
+      - path: roboto_armature/Cpie_L/polo_R
+        weight: 1
+      - path: roboto_armature/Cpie_R
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001/ik_L
+        weight: 1
+      - path: roboto_armature/Cpie_R/polo_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_R
+        weight: 1
+      - path: roboto_armature/gen
+        weight: 1
+      - path: roboto_armature/gen/barriguita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/drivlatgen
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/A
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdowout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdowout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latdown
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmup
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L/CIKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R/CIKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L/anular3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L/indice3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L/medio3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L/menique3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L/pulgar3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R/anular3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R/indice3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R/medio3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R/menique3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R/pulgar3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar_R
+        weight: 1
+      - path: roboto_armature/gen/CApie_L
+        weight: 1
+      - path: roboto_armature/gen/CApie_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L/CIKpolo_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R/CIKpolo_R
+        weight: 1
+      - path: roboto_armature/gen/twist
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L/deditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L/CIKdeditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R/deditos_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R/CIKdeditos_R
+        weight: 1
+      - path: roboto_armature/vlat
+        weight: 1
+      - path: roboto_armature/vshape
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Jump
+      takeName: Punch
+      firstFrame: 20
+      lastFrame: 25
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: roboto
+        weight: 1
+      - path: roboto_armature
+        weight: 1
+      - path: roboto_armature/cast_L
+        weight: 1
+      - path: roboto_armature/cast_R
+        weight: 1
+      - path: roboto_armature/Cpie_L
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001/ik_R
+        weight: 1
+      - path: roboto_armature/Cpie_L/polo_R
+        weight: 1
+      - path: roboto_armature/Cpie_R
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001/ik_L
+        weight: 1
+      - path: roboto_armature/Cpie_R/polo_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_R
+        weight: 1
+      - path: roboto_armature/gen
+        weight: 1
+      - path: roboto_armature/gen/barriguita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/drivlatgen
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/A
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdowout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdowout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latdown
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmup
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L/CIKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R/CIKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L/anular3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L/indice3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L/medio3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L/menique3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L/pulgar3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R/anular3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R/indice3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R/medio3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R/menique3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R/pulgar3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar_R
+        weight: 1
+      - path: roboto_armature/gen/CApie_L
+        weight: 1
+      - path: roboto_armature/gen/CApie_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L/CIKpolo_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R/CIKpolo_R
+        weight: 1
+      - path: roboto_armature/gen/twist
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L/deditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L/CIKdeditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R/deditos_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R/CIKdeditos_R
+        weight: 1
+      - path: roboto_armature/vlat
+        weight: 1
+      - path: roboto_armature/vshape
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GunRunWalk
+      takeName: GunRunWalk
+      firstFrame: 20
+      lastFrame: 40
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: roboto
+        weight: 1
+      - path: roboto_armature
+        weight: 1
+      - path: roboto_armature/cast_L
+        weight: 1
+      - path: roboto_armature/cast_R
+        weight: 1
+      - path: roboto_armature/Cpie_L
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001
+        weight: 1
+      - path: roboto_armature/Cpie_L/CIKempeine_R_001/ik_R
+        weight: 1
+      - path: roboto_armature/Cpie_L/polo_R
+        weight: 1
+      - path: roboto_armature/Cpie_R
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001
+        weight: 1
+      - path: roboto_armature/Cpie_R/CIKempeine_L_001/ik_L
+        weight: 1
+      - path: roboto_armature/Cpie_R/polo_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_L
+        weight: 1
+      - path: roboto_armature/drivFKIK_R
+        weight: 1
+      - path: roboto_armature/gen
+        weight: 1
+      - path: roboto_armature/gen/barriguita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/drivlatgen
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/A
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latdowout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latmidout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupin_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_L/latupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latdowout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latmidout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupin_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/latloc_R/latupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/cabezita/ojo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latdown
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmdownout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmup
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupmid_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/latmupout_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/cabeza/mouth_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_L/brazo_L_001/CIKantebrazo_L/CIKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/CIKhombro_R/CIKbrazo_R/CIKantebrazo_R/CIKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular1_L/anular2_L/anular3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/anular_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice1_L/indice2_L/indice3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/indice_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio1_L/medio2_L/medio3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/medio_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique1_L/penique2_L/menique3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/menique_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar1_L/pulgar2_L/pulgar3_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_L/brazo_L/antebrazo_L/manito_L/pulgar_L
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular1_R/anular2_R/anular3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/anular_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice1_R/indice2_R/indice3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/indice_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio1_R/medio2_R/medio3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/medio_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique1_R/penique2_R/menique3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/menique_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar1_R/pulgar2_R/pulgar3_R
+        weight: 1
+      - path: roboto_armature/gen/barriguita/pechito/hombro_R/brazo_R/antebrazo_R/manito_R/pulgar_R
+        weight: 1
+      - path: roboto_armature/gen/CApie_L
+        weight: 1
+      - path: roboto_armature/gen/CApie_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_L/CIKpolo_L
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R
+        weight: 1
+      - path: roboto_armature/gen/IKmanito_R/CIKpolo_R
+        weight: 1
+      - path: roboto_armature/gen/twist
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L/canilla_L/empeine_L/deditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_L_001/CIKcanilla_L/CIKempeine_L/CIKdeditos_L
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R/canilla_R/empeine_R/deditos_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R
+        weight: 1
+      - path: roboto_armature/gen/twist/muslo_R_001/CIKcanilla_R/CIKempeine_R/CIKdeditos_R
+        weight: 1
+      - path: roboto_armature/vlat
+        weight: 1
+      - path: roboto_armature/vshape
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: GunFire
+      takeName: GunFire
+      firstFrame: 20
+      lastFrame: 40
+      wrapMode: 1
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
