@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.IO;
+using System.Text;
 
 public class StartMenu : MonoBehaviour {
 
@@ -15,13 +17,26 @@ public class StartMenu : MonoBehaviour {
 	public Texture2D _unmute;
 	public Texture2D _sound;
 	public Texture2D _nosound;
+    private string name = "Enter Name Here";
 	
-	
+	void Start()
+    {
+        Debug.Log("Entered StartMenu Start");
+        if(!File.Exists("Scoreboard.txt"))
+        {
+            Debug.Log("Creating File");
+            File.Create("Scoreboard.txt");
+        }
+    }
+
 	void OnGUI(){
 		
 		//The title box
 		GUI.Box(new Rect(Screen.width/4, Screen.height/5, Screen.width/2, Screen.width/10), "Platformer 5000", _title);
-		
+
+        name = GUI.TextArea((new Rect(0, (Screen.height * 13) / 15, Screen.width / 4, Screen.height / 15)), name);
+        PlayerPrefs.SetString("CurrentPlayer", name);
+
 		//The "Game developed by" box
 		GUI.Box(new Rect(0, (Screen.height*14)/15, Screen.width/4, Screen.height/15), "Game developed By: João, Sebastião, André", _menuskin.box);
 		
@@ -50,6 +65,8 @@ public class StartMenu : MonoBehaviour {
 		
 		//Start button
 		if(GUI.Button(new Rect((Screen.width/2) - Screen.height/10, (Screen.height/2) - Screen.height/10, Screen.width/10, Screen.height/10), new GUIContent("Start", "Click to start"), _menuskin.button)){
+
+            PlayerPrefs.Save();
 			Application.LoadLevel("Scene");
 			
 		}

@@ -9,7 +9,7 @@ public class StartLevel : MonoBehaviour {
         player = Resources.Load("Prefab/BotWithCamera") as GameObject;
         Instantiate(player, transform.position, Quaternion.identity);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	

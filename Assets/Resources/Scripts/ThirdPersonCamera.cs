@@ -290,4 +290,16 @@ public class ThirdPersonCamera : MonoBehaviour
         movementX = movX;
         movementZ = movZ;
     }
+
+    private Transform FindChild(string name)
+    {
+        Transform[] trans = GetComponentsInChildren<Transform>();
+
+        foreach (Transform t in trans)
+        {
+            if (t.gameObject.name.Equals(name))
+                return t;
+        }
+        return null;
+    }
 }

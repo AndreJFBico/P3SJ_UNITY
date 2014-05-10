@@ -19,7 +19,9 @@ public class Stats : MonoBehaviour {
 
     public void endGame()
     {
-
+        transform.parent.gameObject.GetComponent<ScoreBoard>().updateScores(score);
+        Destroy(transform.parent.gameObject);
+        Application.LoadLevel("LeaderBoard");
     }
 
     public void pickupKey()
@@ -34,6 +36,12 @@ public class Stats : MonoBehaviour {
             decreaseScore(1);
             yield return new WaitForSeconds(1);
         }        
+    }
+
+    public void fellOff()
+    {
+        decreaseHealth();
+        transform.position = GameObject.FindWithTag("StartLevel").GetComponent<Transform>().position;
     }
 
     public void decreaseScore(int amount)
