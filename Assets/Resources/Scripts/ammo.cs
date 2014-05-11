@@ -22,9 +22,12 @@ public class ammo : MonoBehaviour {
             if(scrpt != null)
                 scrpt.damage(5);
         }
-        GameObject exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position, Quaternion.identity);
-        Destroy(exp, 0.2f); 
-        Destroy(this.gameObject);
+        else if (col.gameObject.tag != "Player")
+        {
+            GameObject exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position, Quaternion.identity);
+            Destroy(exp, 0.2f);
+            Destroy(this.gameObject);
+        }
     }
 	
 	public float getDamage() {

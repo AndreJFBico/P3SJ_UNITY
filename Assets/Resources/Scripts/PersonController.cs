@@ -173,7 +173,7 @@ void  UpdateSmoothedMovementDirection ()
 		// We store speed and direction seperately,
 		// so that when the character stands still we still have a valid forward direction
 		// moveDirection is always normalized, and we only update it if there is user input.
-        if (targetDirection != Vector3.zero && _secondaryState != CharacterState.Firing && !IsMovingBackwards())
+        if (targetDirection != Vector3.zero /*&& _secondaryState != CharacterState.Firing*/ && !IsMovingBackwards())
 		{
 			// If we are really slow, just snap to the target direction
 			/*if (moveSpeed < walkSpeed * 0.9f && grounded)
@@ -387,7 +387,13 @@ void Update ()
                 if ( _secondaryState == CharacterState.Firing)
                 {
                     _animation[fireAnimation.name].speed = Mathf.Clamp(controller.velocity.magnitude, 0.0f, fireAnimationSpeed);
-                    _animation.CrossFade(fireAnimation.name);
+                    if (_characterState == CharacterState.Running)
+                    {
+                        _animation.Stop(runAnimation.name);
+                        _animation.CrossFade(fireAnimation.name);
+                    }
+                    else _animation.CrossFade(fireAnimation.name);
+
                 }
                 else
                 {

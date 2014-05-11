@@ -1,31 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Turret : MonoBehaviour {
+public class EnemyAgent : MonoBehaviour
+{
 
     private GameObject prefab;
     private bool firing = false;
     private Transform inicial;
     private float health = 50;
+    private NavMeshAgent agent;
+    private bool followPlayer;
     private Transform player;
-
-	// Use this for initialization
-	void Start () {
+    private bool found = false;
+    // Use this for initialization
+    void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
         prefab = Resources.Load("Prefab/Bullet") as GameObject;
         inicial = transform;
-        StartCoroutine(fireBullet());
-	}
-	
+        StartCoroutine(fireBullet());     
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-        {
+        {          
             transform.LookAt(new Vector3(other.transform.position.x, other.transform.position.y + 2f, other.transform.position.z));
             if (!firing)
             {
-                firing = true;
+                firing = true;               
                 player = other.gameObject.transform;
-            }
+                found = true;
+            }              
         }
     }
 
@@ -68,8 +74,10 @@ public class Turret : MonoBehaviour {
         else health -= damage;
     }
 
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (found && player != null)
+            agent.SetDestination(player.transform.position - player.transform.forward * 1f);
+    }
 }

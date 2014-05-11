@@ -12,7 +12,13 @@ public class EndLevel : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-            ;//endlevel
+        {
+            Stats playerStats = other.gameObject.GetComponent<Stats>();
+            if (playerStats.haveKey())
+            {
+                playerStats.endGame();
+            }
+        }
     }
 
 	// Update is called once per frame

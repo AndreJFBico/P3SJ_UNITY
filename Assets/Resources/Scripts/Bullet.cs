@@ -18,8 +18,10 @@ public class Bullet : MonoBehaviour {
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Stats>().decreaseHealth();
+            Destroy(transform.gameObject);
         }
-        Destroy(gameObject);
+        else if (other.gameObject.tag != "Bullet")
+            Destroy(transform.gameObject);
     }
 	
 	// Update is called once per frame

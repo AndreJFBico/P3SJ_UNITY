@@ -29,6 +29,11 @@ public class Stats : MonoBehaviour {
         hasKey = true;
     }
 
+    public bool haveKey()
+    {
+        return hasKey;
+    }
+
     public IEnumerator decreaseScoreTimely()
     {
         while (true)
