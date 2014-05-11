@@ -32,9 +32,9 @@ public class StartMenu : MonoBehaviour {
 	void OnGUI(){
 		
 		//The title box
-		GUI.Box(new Rect(Screen.width/4, Screen.height/5, Screen.width/2, Screen.width/10), "Platformer 5000", _title);
+		GUI.Box(new Rect(Screen.width/4, Screen.height/5, Screen.width/2, Screen.height/10), "RAMBO 5000", _title);
 
-        name = GUI.TextArea((new Rect(0, (Screen.height * 13) / 15, Screen.width / 4, Screen.height / 15)), name);
+        name = GUI.TextField((new Rect((Screen.width/2) + Screen.width/10 + 10, (Screen.height/2) - Screen.height/10, Screen.width/5, Screen.height/10)), name);
         PlayerPrefs.SetString("CurrentPlayer", name);
 
 		//The "Game developed by" box
@@ -64,7 +64,8 @@ public class StartMenu : MonoBehaviour {
 		
 		
 		//Start button
-		if(GUI.Button(new Rect((Screen.width/2) - Screen.height/10, (Screen.height/2) - Screen.height/10, Screen.width/10, Screen.height/10), new GUIContent("Start", "Click to start"), _menuskin.button)){
+        if (GUI.Button(new Rect((Screen.width / 2) - Screen.width / 10, (Screen.height / 2) - Screen.height / 10, Screen.width / 5, Screen.height / 10), new GUIContent("Start", "Click to start"), _menuskin.button))
+        {
 
             PlayerPrefs.Save();
 			Application.LoadLevel("Scene");
@@ -72,11 +73,12 @@ public class StartMenu : MonoBehaviour {
 		}
 		
 		//Options Button
-		GUI.Button(new Rect((Screen.width/2) - Screen.height/10, (Screen.height/2), Screen.width/10, Screen.height/10), new GUIContent("Options", "Click to mute, change volume settings or game quality"), _menuskin.button);
+        GUI.Button(new Rect((Screen.width / 2) - Screen.width / 10, (Screen.height / 2), Screen.width / 5, Screen.height / 10), new GUIContent("Options", "Click to mute, change volume settings or game quality"), _menuskin.button);
 		
 		
 		//Credits Window
-		if(GUI.Button(new Rect((Screen.width/2) - Screen.height/10, (Screen.height/2) + Screen.height/10, Screen.width/10, Screen.height/10), new GUIContent("Credits", "Click to view the credits"), _menuskin.button)){
+        if (GUI.Button(new Rect((Screen.width / 2) - Screen.width / 10, (Screen.height / 2) + Screen.height / 10, Screen.width / 5, Screen.height / 10), new GUIContent("Credits", "Click to view the credits"), _menuskin.button))
+        {
 			if(_showcredits == true)
 				_showcredits = false;
 			else _showcredits = true;
