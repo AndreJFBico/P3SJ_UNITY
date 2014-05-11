@@ -18,7 +18,7 @@ public class ammo : MonoBehaviour {
     {
         if(col.gameObject.tag == "Enemy")
         {
-            Turret scrpt = col.gameObject.GetComponent<Turret>();
+            EnemyAgent scrpt = col.gameObject.GetComponent<EnemyAgent>();
             if(scrpt != null)
                 scrpt.damage(5);
         }

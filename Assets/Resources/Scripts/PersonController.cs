@@ -304,6 +304,7 @@ public void runFireAnim(Vector3 target)
     Vector3 posIgnoringY = new Vector3(target.x, transform.position.y, target.z);
     previousForward = transform.forward;
     transform.LookAt(posIgnoringY);
+    _characterState = CharacterState.Walking;
     _secondaryState = CharacterState.Firing;
     /*if(!IsJumping())
         moveDirection = transform.forward; */
