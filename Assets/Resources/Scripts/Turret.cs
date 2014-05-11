@@ -19,10 +19,10 @@ public class Turret : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-        {
-            transform.LookAt(new Vector3(other.transform.position.x, other.transform.position.y + 2f, other.transform.position.z));
+        {         
             if (!firing)
             {
+                transform.LookAt(new Vector3(other.transform.position.x, other.transform.position.y + 2f, other.transform.position.z));
                 firing = true;
                 player = other.gameObject.transform;
             }

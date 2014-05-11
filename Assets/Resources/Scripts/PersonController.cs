@@ -335,8 +335,8 @@ void Update ()
 
     // Move the controller
 
-    Vector3 movement, backMovement;
-    movement = moveDirection * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
+    Vector3 backMovement;
+    Vector3 movement = moveDirection * moveSpeed + new Vector3(0, verticalSpeed, 0) + inAirVelocity;
     movement *= Time.deltaTime;
     if (IsMovingBackwards())
     {

@@ -6,7 +6,7 @@ public class ThirdPersonCamera : MonoBehaviour
 {
 	private Collider target;
 		// The object we're looking at
-	private Camera camera;
+	new private Camera camera;
 		// The camera to control
 	public LayerMask obstacleLayers = 0, groundLayers = -1;
 		// Which layers should count as obstructing the view? And which are designated ground?
