@@ -15,6 +15,7 @@ public class Pickup : MonoBehaviour {
         if (other.tag == "Player")
         {
             other.GetComponent<Stats>().pickupKey();
+            other.GetComponent<Stats>().increaseScore(100);
             Destroy(gameObject);
         }
     }

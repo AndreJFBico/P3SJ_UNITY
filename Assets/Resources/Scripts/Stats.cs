@@ -57,6 +57,11 @@ public class Stats : MonoBehaviour {
         score -= amount;
     }
 
+    public void increaseScore(int amount)
+    {
+        score += amount;
+    }
+
     public void decreaseHealth()
     {
         if (lives == 0)
