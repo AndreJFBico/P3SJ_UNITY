@@ -33,11 +33,11 @@ public class WeaponScript : MonoBehaviour {
     void fireTowardsTarget(Vector3 targetPos)
     {
         controller.runFireAnim(targetPos);
-        intAmmo = Instantiate(Resources.Load("Prefab/ammo"), firepoint.transform.position , Quaternion.identity) as GameObject;
+        intAmmo = Instantiate(Resources.Load("Prefab/ammo"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity) as GameObject;
         //intAmmo.rigidbody.velocity = transform.TransformDirection(Vector3.forward * speed);
         intAmmo.rigidbody.AddForce((targetPos - firepoint.transform.position) * speed);
-        exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position + transform.forward * 2f, Quaternion.identity);
-        exp.transform.parent = firepoint.transform;
+        exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity);
+        //exp.transform.parent = firepoint.transform;
         Destroy(exp, 0.2f); 
         StartCoroutine(WaitAndDo(0.2f, resetAnim));
         StartCoroutine(WaitAndDo(1.5f, explodeAmmo, intAmmo));
