@@ -5,7 +5,7 @@ public class Stats : MonoBehaviour {
 
     private int lives = 3;
     private int score = 1000;
-    public int bullets = 20;
+    public int bullets = 60;
     private string playerName = "";
     private bool hasKey = false;
 
@@ -19,7 +19,7 @@ public class Stats : MonoBehaviour {
             GUI.Label(new Rect(10 + 20*i, 10, 20, 20), tex);
 
         for (int i = 0; i < bullets; i++)
-            GUI.Label(new Rect(5 + 40*i, Screen.height - 60 , 40, 40), texBullet);
+            GUI.Label(new Rect(5 + 5*i, Screen.height - 60 , 40, 40), texBullet);
         if(hasKey)
             GUI.Label(new Rect(5, Screen.height - 110, 200, 40), "Key Obtained!!!");
         else GUI.Label(new Rect(5, Screen.height - 110, 200, 40), "No Key");

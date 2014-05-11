@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyAgent : MonoBehaviour
+public class EnemyAgent : MonoBehaviour, Enemy
 {
 
     private GameObject prefab;

@@ -16,11 +16,19 @@ public class ammo : MonoBehaviour {
 	}
     void OnCollisionEnter(Collision col)
     {
-        if(col.gameObject.tag == "Enemy")
+        if(col.gameObject.tag == "EnemyAgent")
         {
             EnemyAgent scrpt = col.gameObject.GetComponent<EnemyAgent>();
             if(scrpt != null)
                 scrpt.damage(5);
+            Destroy(this.gameObject);
+        }
+        else if (col.gameObject.tag == "Enemy")
+        {
+            Turret scrpt = col.gameObject.GetComponent<Turret>();
+            if (scrpt != null)
+                scrpt.damage(5);
+            Destroy(this.gameObject);
         }
         else if (col.gameObject.tag != "Player")
         {
