@@ -101,6 +101,8 @@ private CharacterController controller;
 
 private bool isControllable= true;
 
+private Vector3 previousForward;
+
 void  Awake ()
 {
 	moveDirection = transform.TransformDirection(Vector3.forward);
@@ -140,8 +142,14 @@ void  UpdateSmoothedMovementDirection ()
 	
 	// Forward vector relative to the camera along the x-z plane	
 	//Vector3 forward= cameraTransform.TransformDirection(Vector3.forward);
+
+    Vector3 forward;
+    if (_secondaryState != CharacterState.Firing)
+    {
+        forward = transform.forward;
+    }
+    else forward = previousForward;
 	
-	Vector3 forward = transform.forward;
     forward.y = 0;
 	// Right vector relative to the camera
 	// Always orthogonal to the forward vector
@@ -294,6 +302,7 @@ public void DidJump ()
 public void runFireAnim(Vector3 target)
 {
     Vector3 posIgnoringY = new Vector3(target.x, transform.position.y, target.z);
+    previousForward = transform.forward;
     transform.LookAt(posIgnoringY);
     _secondaryState = CharacterState.Firing;
     /*if(!IsJumping())
