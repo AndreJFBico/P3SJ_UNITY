@@ -16,7 +16,7 @@ public class EndLevel : MonoBehaviour {
             Stats playerStats = other.gameObject.GetComponent<Stats>();
             if (playerStats.haveKey())
             {
-                playerStats.endGame();
+                playerStats.endGame(true);
             }
         }
     }

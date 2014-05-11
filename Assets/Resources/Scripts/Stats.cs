@@ -17,8 +17,11 @@ public class Stats : MonoBehaviour {
             GUI.Label(new Rect(10 + 20*i, 10, 20, 20), tex);
     }
 
-    public void endGame()
+    public void endGame(bool success)
     {
+        if (success)
+            PlayerPrefs.SetString("EndStatus", "WINNER!!!!");
+        else PlayerPrefs.SetString("EndStatus", "GAME OVER");
         transform.parent.gameObject.GetComponent<ScoreBoard>().updateScores(score);
         Destroy(transform.parent.gameObject);
         Application.LoadLevel("LeaderBoard");
@@ -57,7 +60,7 @@ public class Stats : MonoBehaviour {
     public void decreaseHealth()
     {
         if (lives == 0)
-            endGame();
+            endGame(false);
         lives -= 1;
         decreaseScore(100);
     }

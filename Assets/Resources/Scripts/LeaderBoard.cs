@@ -3,6 +3,10 @@ using System.Collections;
 
 public class LeaderBoard : MonoBehaviour {
 
+    public GUISkin _menuskin;
+    public GUIStyle _title;
+    public GUIStyle _scores;
+
     private string[] lines;
 	// Use this for initialization
 	void Start () {
@@ -14,9 +18,11 @@ public class LeaderBoard : MonoBehaviour {
         int i = 0;
         foreach (string s in lines)
         {
-            GUI.Box(new Rect(Screen.width/2 - 40, Screen.height/2 + i*40 - 100, 200, 40), s);
+            GUI.Box(new Rect(Screen.width / 4, Screen.height / 2 + i * 40 - 100, Screen.width / 2, 40), "" + (i + 1) + " - " + s, _scores);
             i++;
         }
+
+        GUI.Box(new Rect(Screen.width / 4, Screen.height / 5, Screen.width / 2, Screen.height / 10), PlayerPrefs.GetString("EndStatus"), _title);
 
         if (GUI.Button(new Rect(10, 10, 200, 50), new GUIContent("Restart", "Click to restart")))
         {
