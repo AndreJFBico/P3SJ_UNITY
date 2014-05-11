@@ -5,16 +5,29 @@ public class Stats : MonoBehaviour {
 
     private int lives = 3;
     private int score = 1000;
+    public int bullets = 20;
     private string playerName = "";
     private bool hasKey = false;
 
     public Texture2D tex;
+    public Texture2D texBullet;
 
     public void OnGUI()
     {
         GUI.Box(new Rect(Screen.width - 120, 10, 100, 20), "Score: " + score);
         for (int i = 0; i < lives; i++ )
             GUI.Label(new Rect(10 + 20*i, 10, 20, 20), tex);
+
+        for (int i = 0; i < bullets; i++)
+            GUI.Label(new Rect(5 + 40*i, Screen.height - 60 , 40, 40), texBullet);
+        if(hasKey)
+            GUI.Label(new Rect(5, Screen.height - 110, 200, 40), "Key Obtained!!!");
+        else GUI.Label(new Rect(5, Screen.height - 110, 200, 40), "No Key");
+    }
+
+    public void decreaseBullet()
+    {
+        bullets -= 1;
     }
 
     public void endGame(bool success)

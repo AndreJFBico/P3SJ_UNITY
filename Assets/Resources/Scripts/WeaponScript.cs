@@ -9,6 +9,7 @@ public class WeaponScript : MonoBehaviour {
     private GameObject intAmmo;
     private GameObject exp;
     private PersonController controller;
+    private Stats stats;
     private bool firing = false;
 
     delegate void DelayedMethod();
@@ -18,6 +19,8 @@ public class WeaponScript : MonoBehaviour {
     {
         controller = transform.GetComponent<PersonController>();
         exp = Resources.Load("Prefab/expEffect") as GameObject;
+
+        stats = GetComponent<Stats>();
 	}
 	
 	// Update is called once per frame
@@ -32,15 +35,19 @@ public class WeaponScript : MonoBehaviour {
 
     void fireTowardsTarget(Vector3 targetPos)
     {
-        controller.runFireAnim(targetPos);
-        intAmmo = Instantiate(Resources.Load("Prefab/ammo"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity) as GameObject;
-        //intAmmo.rigidbody.velocity = transform.TransformDirection(Vector3.forward * speed);
-        intAmmo.rigidbody.AddForce((targetPos - firepoint.transform.position) * speed);
-        exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity);
-        //exp.transform.parent = firepoint.transform;
-        Destroy(exp, 0.2f); 
-        StartCoroutine(WaitAndDo(0.2f, resetAnim));
-        StartCoroutine(WaitAndDo(1.5f, explodeAmmo, intAmmo));
+        if (stats.bullets > 0)
+        {
+            controller.runFireAnim(targetPos);
+            intAmmo = Instantiate(Resources.Load("Prefab/ammo"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity) as GameObject;
+            //intAmmo.rigidbody.velocity = transform.TransformDirection(Vector3.forward * speed);
+            intAmmo.rigidbody.AddForce((targetPos - firepoint.transform.position) * speed);
+            exp = (GameObject)Instantiate(Resources.Load("Prefab/expEffect"), transform.position + transform.forward * 2f + new Vector3(0f, 2f, 0f), Quaternion.identity);
+            //exp.transform.parent = firepoint.transform;
+            stats.decreaseBullet();
+            Destroy(exp, 0.2f);
+            StartCoroutine(WaitAndDo(0.2f, resetAnim));
+            StartCoroutine(WaitAndDo(1.5f, explodeAmmo, intAmmo));
+        }
     }
 
     IEnumerator WaitAndDo(float time, DelayedMethod method, GameObject ammo)
