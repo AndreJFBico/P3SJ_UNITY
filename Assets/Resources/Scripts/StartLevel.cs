@@ -7,7 +7,9 @@ public class StartLevel : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         player = Resources.Load("Prefab/Rambo") as GameObject;
-        Instantiate(player, transform.position, Quaternion.identity);
+        player.transform.rotation *= Quaternion.Euler(0, 180, 0);
+        player = Instantiate(player, transform.position, player.transform.rotation) as GameObject;
+        
 	}
 
 	// Update is called once per frame

@@ -17,6 +17,7 @@ public class DeactivateTrap : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         Debug.Log(col.gameObject.tag);
-        trap.setDeactivated(true);
+        if(col.gameObject.tag == "Pprojectile")
+            trap.setDeactivated(true);
     }
 }

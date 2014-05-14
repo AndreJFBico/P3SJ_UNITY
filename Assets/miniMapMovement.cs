@@ -15,6 +15,9 @@ public class miniMapMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void LateUpdate () {
-        transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        if(target!= null)
+        {
+            transform.position = new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);
+        }      
 	}
 }

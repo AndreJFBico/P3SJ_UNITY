@@ -18,7 +18,6 @@ public class Turret : MonoBehaviour, Enemy {
 	
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.tag == "Player")
         {         
             if (!firing)

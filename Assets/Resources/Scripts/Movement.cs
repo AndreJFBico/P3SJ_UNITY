@@ -13,13 +13,17 @@ public class Movement : MonoBehaviour {
 	void Start () {
         goingStart = true;
         deactivated = false;
-        speed = 2;
+        speed = 3;
+        rigidbody.AddTorque(Vector3.right * 10);
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        
         if (!deactivated)
         {
+            
+            transform.position = transform.position;
             if (goingStart)
             {
                 transform.Translate((start.transform.position - transform.position) * (Time.deltaTime * speed), Space.World);
