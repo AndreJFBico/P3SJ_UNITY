@@ -5,7 +5,7 @@ public class StartLevel : MonoBehaviour {
 
     private GameObject player;
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         player = Resources.Load("Prefab/Rambo") as GameObject;
         Instantiate(player, transform.position, Quaternion.identity);
 	}
@@ -14,4 +14,9 @@ public class StartLevel : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    public GameObject getPlayer()
+    {
+        return player;
+    }
 }
