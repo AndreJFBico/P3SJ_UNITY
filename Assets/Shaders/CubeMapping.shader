@@ -9,8 +9,8 @@
          uniform samplerCube _Cube;   
 
          uniform vec3 _WorldSpaceCameraPos; 
-         uniform mat4 _Object2World; // model matrix
-         uniform mat4 _World2Object; // inverse model matrix
+         uniform mat4 _Object2World;
+         uniform mat4 _World2Object;
  
          varying vec3 normalDirection;
          varying vec3 viewDirection;
