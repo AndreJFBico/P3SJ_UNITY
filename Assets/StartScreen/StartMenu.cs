@@ -36,6 +36,7 @@ public class StartMenu : MonoBehaviour {
 
         name = GUI.TextField((new Rect((Screen.width/2) + Screen.width/10 + 10, (Screen.height/2) - Screen.height/10, Screen.width/5, Screen.height/10)), name);
         PlayerPrefs.SetString("CurrentPlayer", name);
+        PlayerPrefs.SetInt(name, 0);
 
 		//The "Game developed by" box
 		GUI.Box(new Rect(0, (Screen.height*14)/15, Screen.width/4, Screen.height/15), "Game developed By: João, Sebastião, André", _menuskin.box);
@@ -68,7 +69,7 @@ public class StartMenu : MonoBehaviour {
         {
 
             PlayerPrefs.Save();
-			Application.LoadLevel("Scene");
+			Application.LoadLevel(Application.loadedLevel + 1);
 			
 		}
 		

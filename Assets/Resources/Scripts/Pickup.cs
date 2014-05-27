@@ -3,11 +3,10 @@ using System.Collections;
 
 public class Pickup : MonoBehaviour {
 
-    
-
+    private GameObject end;
 	// Use this for initialization
 	void Start () {
-	
+        end = GameObject.FindWithTag("End");
 	}
 	
     void OnTriggerEnter(Collider other)
@@ -16,6 +15,9 @@ public class Pickup : MonoBehaviour {
         {
             other.GetComponent<Stats>().pickupKey();
             other.GetComponent<Stats>().increaseScore(100);
+            Color c = Color.green;
+            c.a = 0.19f;
+            end.transform.renderer.material.SetColor("_Color", c);
             Destroy(gameObject);
         }
     }
