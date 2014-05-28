@@ -37,7 +37,7 @@ public class Stats : MonoBehaviour {
 
         if (success)
         {
-            if (loadedLevel == 2)
+            if (loadedLevel == 3)
             {
                 PlayerPrefs.SetString("EndStatus", "WINNER!!!!");
                 transform.parent.gameObject.GetComponent<ScoreBoard>().writeScore(score);

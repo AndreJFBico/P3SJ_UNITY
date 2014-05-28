@@ -26,7 +26,8 @@ public class TeleportToPeer : MonoBehaviour {
         if (!wasTeleported)
         {
             peer.GetComponent<TeleportToPeer>().teleported();
-            other.transform.position = peer.transform.position;
+            other.transform.position = peer.transform.position - new Vector3(0, 2.8f, 0);
+            other.transform.rotation = peer.transform.rotation;
         }
     }
 	
