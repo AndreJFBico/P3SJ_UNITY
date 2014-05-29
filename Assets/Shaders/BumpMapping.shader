@@ -273,7 +273,7 @@
 
             //attenuation = 1 / (1.0 +LightAttenuation.x * Ldist + LightAttenuation.y * pow(Ldist,2));
 
-            gl_FragColor = texture2D(_MainTex, vec2(tex_cor)) * vec4((diffuse + specular) * attenuation, 1.0) / 4;
+            gl_FragColor = texture2D(_MainTex, vec2(tex_cor)) * vec4((diffuse + specular) * attenuation, 1.0) / 8;
          }
  
          #endif

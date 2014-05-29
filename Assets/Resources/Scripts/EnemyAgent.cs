@@ -11,6 +11,8 @@ public class EnemyAgent : MonoBehaviour, Enemy
     private NavMeshAgent agent;
     private bool followPlayer;
     private Transform player;
+    private GameObject particles;
+    private GameObject particleObjects;
     private bool found = false;
     // Use this for initialization
     void Start()
@@ -18,7 +20,8 @@ public class EnemyAgent : MonoBehaviour, Enemy
         agent = GetComponent<NavMeshAgent>();
         prefab = Resources.Load("Prefab/Bullet") as GameObject;
         inicial = transform;
-        StartCoroutine(fireBullet());     
+        StartCoroutine(fireBullet());
+        particles = (GameObject)Resources.Load("UberParticleSystem/Creations/Explosion");
     }
 
     void OnTriggerEnter(Collider other)
@@ -69,9 +72,17 @@ public class EnemyAgent : MonoBehaviour, Enemy
     {
         if (health - damage < 0)
         {
-            Destroy(this.gameObject);
+            particleObjects = Instantiate(particles, transform.position, particles.transform.rotation) as GameObject;
+            this.gameObject.SetActive(false);
+            Invoke("endParticles", 2);
         }
         else health -= damage;
+    }
+
+    void endParticles()
+    {
+        Destroy(particleObjects);
+        Destroy(this.gameObject);
     }
 
     // Update is called once per frame
