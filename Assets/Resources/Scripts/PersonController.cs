@@ -44,7 +44,7 @@ public float inAirControlAcceleration= 3.0f;
 
 // How high do we jump when pressing jump and letting go immediately
 public float jumpHeight= 1.5f;
-
+private float normaljumpHeight = 1.5f;
 // The gravity for the character
 public float gravity= 20.0f;
 // The gravity in controlled descent mode
@@ -133,7 +133,6 @@ void  Awake ()
 	}
     camera = Camera.main.GetComponent<ThirdPersonCamera>();
 }
-
 
 void  UpdateSmoothedMovementDirection ()
 {
@@ -241,7 +240,6 @@ void  UpdateSmoothedMovementDirection ()
 	}
 }
 
-
 void  ApplyJumping (){
 	// Prevent jumping too fast after each other
 	if (lastJumpTime + jumpRepeatTime > Time.time)
@@ -257,7 +255,6 @@ void  ApplyJumping (){
 		}
 	}
 }
-
 
 void  ApplyGravity ()
 {

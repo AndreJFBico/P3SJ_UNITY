@@ -27,7 +27,8 @@ public class LeaderBoard : MonoBehaviour {
         if (GUI.Button(new Rect(10, 10, 200, 50), new GUIContent("Restart", "Click to restart")))
         {
             PlayerPrefs.Save();
-            Application.LoadLevel("Scene");
+            PlayerPrefs.SetInt(PlayerPrefs.GetString("CurrentPlayer"), 0);
+            Application.LoadLevel(1);
         }
 
         if (GUI.Button(new Rect(10, 70, 200, 50), new GUIContent("New Player", "Click to restart")))

@@ -11,15 +11,21 @@ public class ScoreBoard : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         name = PlayerPrefs.GetString("CurrentPlayer");
-        PlayerPrefs.SetInt(name, 0);
 	}
 	
     public void updateScores(int scored)
     {
-        PlayerPrefs.SetInt(name, scored);
+        PlayerPrefs.SetInt(name, PlayerPrefs.GetInt(name) + scored);
+        PlayerPrefs.Save();
+    }
+
+    public void writeScore(int scored)
+    {
+        Debug.Log(PlayerPrefs.GetInt(name));
+        PlayerPrefs.SetInt(name, PlayerPrefs.GetInt(name) + scored);
         PlayerPrefs.Save();
         StreamWriter file2 = new StreamWriter("Scoreboard.txt", true);
-        file2.WriteLine(name + ": " + scored);
+        file2.WriteLine(name + ": " + PlayerPrefs.GetInt(name));
         file2.Close();
     }
 

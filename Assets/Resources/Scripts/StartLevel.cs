@@ -8,7 +8,7 @@ public class StartLevel : MonoBehaviour {
 	void Awake () {
         player = Resources.Load("Prefab/Rambo") as GameObject;
         player.transform.rotation *= Quaternion.Euler(0, 180, 0);
-        player = Instantiate(player, transform.position, player.transform.rotation) as GameObject;
+        player = Instantiate(player, transform.position - new Vector3(0, 2.8f, 0), transform.rotation) as GameObject;
         
 	}
 

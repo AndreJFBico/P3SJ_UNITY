@@ -7,7 +7,7 @@ public class EnemyAgent : MonoBehaviour, Enemy
     private GameObject prefab;
     private bool firing = false;
     private Transform inicial;
-    private float health = 50;
+    private float health = 20;
     private NavMeshAgent agent;
     private bool followPlayer;
     private Transform player;
@@ -44,7 +44,7 @@ public class EnemyAgent : MonoBehaviour, Enemy
                 GameObject bullet = Instantiate(prefab, transform.position + 2 * transform.forward, transform.rotation) as GameObject;
                 bullet.rigidbody.AddForce(((player.position + new Vector3(0f, 2f, 0f)) - transform.position).normalized * 1300);
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1f);
         }
     }
 

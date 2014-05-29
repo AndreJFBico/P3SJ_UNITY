@@ -32,12 +32,35 @@ public class Stats : MonoBehaviour {
 
     public void endGame(bool success)
     {
+        int loadedLevel = Application.loadedLevel;
+        string levelname = Application.loadedLevelName;
+
         if (success)
-            PlayerPrefs.SetString("EndStatus", "WINNER!!!!");
-        else PlayerPrefs.SetString("EndStatus", "GAME OVER");
-        transform.parent.gameObject.GetComponent<ScoreBoard>().updateScores(score);
-        Destroy(transform.parent.gameObject);
-        Application.LoadLevel("LeaderBoard");
+        {
+            if (loadedLevel == 3)
+            {
+                PlayerPrefs.SetString("EndStatus", "WINNER!!!!");
+                transform.parent.gameObject.GetComponent<ScoreBoard>().writeScore(score);
+                Destroy(transform.parent.gameObject);
+                Application.LoadLevel(++loadedLevel);
+            }
+            else
+            {
+                PlayerPrefs.SetString("EndStatus", "WINNER!!!!");
+                transform.parent.gameObject.GetComponent<ScoreBoard>().updateScores(score);
+                Destroy(transform.parent.gameObject);
+                Application.LoadLevel(++loadedLevel);            
+            }
+
+        }
+        else
+        {
+            PlayerPrefs.SetString("EndStatus", "GAME OVER");
+            transform.parent.gameObject.GetComponent<ScoreBoard>().writeScore(score);
+            Destroy(transform.parent.gameObject);
+            Application.LoadLevel("LeaderBoard");
+        }
+
     }
 
     public void pickupKey()
