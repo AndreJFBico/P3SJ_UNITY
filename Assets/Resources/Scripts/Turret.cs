@@ -36,7 +36,7 @@ public class Turret : MonoBehaviour, Enemy {
             if (firing)
             {
                 GameObject bullet = Instantiate(prefab, transform.position + 2 * transform.forward, transform.rotation) as GameObject;
-                bullet.rigidbody.AddForce(((player.position + new Vector3(0f, 2f, 0f)) - transform.position).normalized * 1000);
+                bullet.rigidbody.AddForce(((player.position + new Vector3(0f, 2f, 0f)) - transform.position).normalized * 50);
             }
             yield return new WaitForSeconds(0.5f);
         }
